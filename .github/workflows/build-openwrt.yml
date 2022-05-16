@@ -81,6 +81,13 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        
+    - name: Add theme argon
+      run: |
+        cd package
+        mkdir openwrt-packages
+        cd openwrt-packages
+        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
 
     - name: Generate configuration file
       run: |
@@ -95,6 +102,7 @@ jobs:
         CONFIG_TARGET_SUBTARGET="armv8"
         CONFIG_TARGET_PROFILE="DEVICE_friendlyarm_nanopi-r4s"
         CONFIG_TARGET_ARCH_PACKAGES="aarch64_generic"
+        CONFIG_PACKAGE_luci-theme-argon=y
         EOF
         
         sed -i 's/^[ \t]*//g' ./.config
