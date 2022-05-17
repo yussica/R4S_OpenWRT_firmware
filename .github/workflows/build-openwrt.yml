@@ -84,7 +84,7 @@ jobs:
         
     - name: Add theme argon
       run: |
-        cd package
+        cd openwrt/package
         mkdir openwrt-packages
         cd openwrt-packages
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
