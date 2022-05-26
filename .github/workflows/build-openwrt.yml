@@ -104,6 +104,15 @@ jobs:
         CONFIG_TARGET_PROFILE="DEVICE_friendlyarm_nanopi-r4s"
         CONFIG_TARGET_ARCH_PACKAGES="aarch64_generic"
         CONFIG_PACKAGE_luci-theme-argon=y
+        CONFIG_PACKAGE_luci-app-adblock=y
+        CONFIG_PACKAGE_luci-app-adguardhome=y
+        CONFIG_PACKAGE_luci-app-adguardhome_INCLUDE_binary=y
+        CONFIG_PACKAGE_luci-app-aliyundrive-webdav=y
+        CONFIG_PACKAGE_luci-app-aria2=y
+        CONFIG_PACKAGE_luci-app-dockerman=y
+        CONFIG_PACKAGE_luci-app-openclash=y
+        CONFIG_PACKAGE_luci-app-openvpn=y
+        CONFIG_PACKAGE_luci-app-passwall=y
         EOF
         
         sed -i 's/^[ \t]*//g' ./.config
